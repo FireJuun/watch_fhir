@@ -8,13 +8,18 @@ environment:
 
 dependencies:
   at_client: ^3.0.75
-  at_fhir: ^0.11.0-dev3
-  # at_fhir:
+  # at_fhir: ^0.12.0
+  at_fhir:
+    git:
+      url: https://github.com/FireJuun/at_fhir.git
   #   path: ../at_fhir
   at_onboarding_cli: ^1.4.3
-  fhir: ^0.11.4
-  fhir_at_rest: ^0.11.4
-  fhir_path: ^0.11.3
+  fhir: ^0.12.0
+  fhir_at_rest: ^0.12.0
+  # fhir_path: ^0.11.3
+  fhir_path:
+    git:
+      url: https://github.com/FireJuun/fhir_path.git
   form_validator: ^2.1.1
   freezed_annotation: ^2.4.1
   googleapis: ^12.0.0

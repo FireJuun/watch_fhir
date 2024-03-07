@@ -65,13 +65,14 @@ MeasureReport _createMeasureReport(
   MeasureReport? report,
 ) {
   // print('_createMeasureReport');
+  final now = FhirDateTime(DateTime.now().toIso8601String());
 
   /// Clear the current MeasureReport
   MeasureReport measureReport = report?.copyWith(
         status: FhirCode('complete'),
         type: FhirCode('individual'),
         group: [],
-        period: Period(end: FhirDateTime.fromDateTime(DateTime.now())),
+        period: Period(end: now),
         measure: FhirCanonical('$fhirUrl/Measure/${measure.fhirId}'),
         subject: patient.thisReference,
       ) ??
@@ -79,7 +80,7 @@ MeasureReport _createMeasureReport(
         status: FhirCode('complete'),
         type: FhirCode('individual'),
         group: [],
-        period: Period(end: FhirDateTime.fromDateTime(DateTime.now())),
+        period: Period(end: now),
         measure: FhirCanonical('$fhirUrl/Measure/${measure.fhirId}'),
         subject: patient.thisReference,
       );
